@@ -2072,7 +2072,7 @@ __webpack_require__.r(__webpack_exports__);
     loadBlogs: function loadBlogs() {
       var _this = this;
 
-      axios.post('/api/blog/featured').then(function (response) {
+      axios.get('/api/blog/featured').then(function (response) {
         _this.blogs = response.data;
       })["catch"](function (e) {
         console.error('Failed to load blog posts');
@@ -2130,7 +2130,7 @@ __webpack_require__.r(__webpack_exports__);
     loadBlogs: function loadBlogs() {
       var _this = this;
 
-      axios.get('/api/blog/latest?limit=7').then(function (response) {
+      axios.get('/api/blog/latest?limit=3').then(function (response) {
         _this.blogs = response.data;
       })["catch"](function (e) {
         console.error('Failed to load blog posts');
