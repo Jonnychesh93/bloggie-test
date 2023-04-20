@@ -12,7 +12,13 @@ class BlogController extends Controller
 
     public function index()
     {
-        $blogs = Blog::query()->paginate(12);
+        $now = Carbon::now();
+        $blogs = Blog::query()->where(function ($subquery) use ($now) {
+                return $subquery->where('expired_at', '>', $now)->orWhereNull('expired_at');
+            })
+            ->where('published_at', '<=', $now)
+            ->orderBy('published_at', 'desc')
+            ->paginate(12);
 
         return view('website.blog.index')->with([
             'blogs' => $blogs
