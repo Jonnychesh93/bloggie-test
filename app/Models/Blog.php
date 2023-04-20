@@ -15,6 +15,7 @@ class Blog extends Model
      * @var array
      */
     protected $fillable = [
+        'expired_at',
         'image_url',
         'is_live',
         'main_content',
