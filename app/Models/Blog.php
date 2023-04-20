@@ -22,6 +22,7 @@ class Blog extends Model
         'published_at',
         'slug',
         'title',
+        'second_content'
     ];
 
     /**

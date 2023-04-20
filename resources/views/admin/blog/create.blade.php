@@ -176,6 +176,22 @@
                                         type="text"
                                     >{{ old('main_content') }}</textarea>
                                 </div>
+
+                                    <div class="form-group">
+                                        <label
+                                            for="main_content"
+                                            class="form-control-label"
+                                        >
+                                            Secondary Content
+                                        </label>
+                                        <textarea
+                                            id="second_content"
+                                            class="form-control"
+                                            name="second_content"
+                                            rows="5"
+                                            type="text"
+                                        >{{ old('second_content') }}</textarea>
+                                    </div>
                             </div>
                             <!-- Card footer -->
                             <div class="card-footer py-4 text-right">
