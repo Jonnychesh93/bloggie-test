@@ -17,6 +17,8 @@ Route::get('/', function () {
 Route::get('/blog', [\App\Http\Controllers\Website\BlogController::class, 'index']);
 Route::get('/blog/{blog}', [\App\Http\Controllers\Website\BlogController::class, 'show']);
 
+Route::get('/what-our-customers-say-about-us', [\App\Http\Controllers\Website\TestimonialController::class, 'index']);
+
 
 /** Admin Routes */
 Route::group([
@@ -26,6 +28,14 @@ Route::group([
 ], function () {
     Route::get('/', [App\Http\Controllers\Admin\AdminController::class, 'index'])->name('index');
     Route::resource('blog', \App\Http\Controllers\Admin\BlogController::class)->only([
+        'create',
+        'edit',
+        'index',
+        'update',
+        'store'
+    ]);
+
+    Route::resource('testimonial', \App\Http\Controllers\Admin\TestimonialController::class)->only([
         'create',
         'edit',
         'index',

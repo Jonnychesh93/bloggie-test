@@ -78,13 +78,15 @@
                     </a>
                 </li>
 
-                <!-- TODO: Use this link when implementing testimonials
                 <li class="nav-item">
-                    <a class="nav-link">
+                    <a
+                        class="nav-link"
+                        href="{{route('admin.testimonial.index')}}"
+                    >
                         <i class="ni ni-chat-round text-orange"></i> Testimonials
                     </a>
                 </li>
-                -->
+
             </ul>
 
             <!-- Divider -->
