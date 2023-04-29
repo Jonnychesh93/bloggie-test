@@ -14,7 +14,7 @@ class AddSecondSectionToBlogsTable extends Migration
     public function up()
     {
         Schema::table('blogs', function (Blueprint $table) {
-            $table->text('second_content');
+            $table->text('second_content')->nullable();
         });
     }
 

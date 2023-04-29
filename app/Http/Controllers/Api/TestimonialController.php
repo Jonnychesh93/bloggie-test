@@ -15,6 +15,7 @@ class TestimonialController extends Controller
     {
         $testimonials = Testimonial::where('show', '=', 1)
             ->orderBy('created_at', 'desc')
+            ->orderBy('rating', 'desc')
             ->limit($request->get('limit', 3))
             ->get();
 
