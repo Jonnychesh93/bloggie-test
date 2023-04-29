@@ -10,7 +10,7 @@ class Testimonial extends Model
     use HasFactory;
 
     protected $fillable = [
-        'slug',
+        'show',
         'user_name',
         'message',
         'rating'

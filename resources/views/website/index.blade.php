@@ -48,4 +48,12 @@
 
     <featured-blogs></featured-blogs>
     <latest-blogs></latest-blogs>
+
+    <latest-testimonials></latest-testimonials>
 @endsection
+<script>
+    import LatestTestimonials from "../../js/components/testimonial/LatestTestimonials";
+    export default {
+        components: {LatestTestimonials}
+    }
+</script>

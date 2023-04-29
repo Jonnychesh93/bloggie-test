@@ -29,6 +29,7 @@ class TestimonialStoreRequest extends FormRequest
             'user_name' => ['required'],
             'rating'    => Rule::in([1,2,3,4,5]),
             'message'   => ['nullable'],
+            'show'   => ['nullable'],
         ];
     }
 }

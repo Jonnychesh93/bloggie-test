@@ -112,6 +112,25 @@
                                         type="text"
                                     >{{ old('message') ?? $testimonial->message ?? '' }}</textarea>
                                 </div>
+
+                                    <div class="form-group">
+                                        <label
+                                            for="show"
+                                            class="form-control-label"
+                                        >
+                                            Show Testimonial
+                                        </label>
+
+                                        <input
+                                            id="show"
+                                            class="form-control"
+                                            name="show"
+                                            type="checkbox"
+                                            value="1"
+                                            {{$testimonial->show == 1 ? 'Checked' : ''}}
+                                            style="width: 40px;"
+                                        />
+                                    </div>
                             </div>
                             <!-- Card footer -->
                             <div class="card-footer py-4 text-right">

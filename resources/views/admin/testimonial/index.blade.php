@@ -32,6 +32,23 @@
                     <div class="card">
                         <!-- Card header -->
                         <div class="card-header border-0">
+                            <!-- For delete Response -->
+                            @if(count($errors))
+                                <div class="alert alert-danger">
+                                    <ul class="mb-0">
+                                        @foreach($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif
+
+                            @if(session('success'))
+                                <div class="alert alert-success">
+                                    <p class="mb-0">{{ session('success') }}</p>
+                                </div>
+                            @endif
+
                             <h3 class="mb-3">Filters</h3>
 
                             <form
@@ -68,6 +85,7 @@
                                     <th scope="col">Name</th>
                                     <th scope="col">Rating</th>
                                     <th scope="col">Message</th>
+                                    <th scope="col">Displaying</th>
                                     <th scope="col">Created</th>
                                     <th scope="col"></th>
                                 </tr>
@@ -89,12 +107,16 @@
                                             {{ $testimonial->message }}
                                         </td>
 
+                                        <td class="{{ $testimonial->show === 1 ? 'text-green' : 'text-red' }}">
+                                            {{ $testimonial->show === 1 ? 'Live' : 'Hidden' }}
+                                        </td>
+
                                         <td>
                                             {{ $testimonial->created_at }}
                                         </td>
                                         <td class="text-right">
                                             <div class="dropdown">
-                                                <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <a class="btn btn-sm btn-icon-only text-light pt-2" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                     <i class="fas fa-ellipsis-v"></i>
                                                 </a>
                                                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">

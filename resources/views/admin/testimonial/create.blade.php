@@ -106,6 +106,23 @@
                                         type="text"
                                     >{{ old('message') }}</textarea>
                                 </div>
+
+                                <div class="form-group">
+                                    <label
+                                        for="show"
+                                        class="form-control-label"
+                                    >
+                                        Show Testimonial
+                                    </label>
+                                    <input
+                                        id="show"
+                                        class="form-control"
+                                        name="show"
+                                        type="checkbox"
+                                        value="1"
+                                        style="width: 40px;"
+                                    />
+                                </div>
                             </div>
                             <!-- Card footer -->
                             <div class="card-footer py-4 text-right">

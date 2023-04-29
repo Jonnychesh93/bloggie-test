@@ -19,18 +19,6 @@ class TestimonialUpdateRequest extends FormRequest
     }
 
     /**
-     * Prepare the data for validation.
-     *
-     * @return void
-     */
-    protected function prepareForValidation()
-    {
-        $this->merge([
-            'slug' => Str::slug($this->slug),
-        ]);
-    }
-
-    /**
      * Get the validation rules that apply to the request.
      *
      * @return array
@@ -41,6 +29,7 @@ class TestimonialUpdateRequest extends FormRequest
             'user_name' => ['required'],
             'rating'    => Rule::in([1,2,3,4,5]),
             'message'   => ['nullable'],
+            'show'      => ['nullable'],
         ];
     }
 }

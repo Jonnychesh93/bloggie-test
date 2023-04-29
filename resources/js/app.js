@@ -16,6 +16,7 @@ Vue.component('featured-blogs', require('./components/blog/FeaturedBlogs.vue').d
 Vue.component('latest-blogs', require('./components/blog/LatestBlogs.vue').default);
 Vue.component('blog-card-row', require('./components/blog/BlogCardRow.vue').default);
 Vue.component('testimonial-card', require('./components/testimonial/TestimonialCard.vue').default);
+Vue.component('latest-testimonials', require('./components/testimonial/LatestTestimonials.vue').default);
 
 
 /**

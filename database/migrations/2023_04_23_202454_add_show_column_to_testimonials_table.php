@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddSoftDeleteToTestimonialsTable extends Migration
+class AddShowColumnToTestimonialsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +14,7 @@ class AddSoftDeleteToTestimonialsTable extends Migration
     public function up()
     {
         Schema::table('testimonials', function (Blueprint $table) {
-            $table->softDeletes();
+            $table->boolean('show')->default(0);
         });
     }
 
@@ -26,7 +26,7 @@ class AddSoftDeleteToTestimonialsTable extends Migration
     public function down()
     {
         Schema::table('testimonials', function (Blueprint $table) {
-            $table->dropSoftDeletes();
+            $table->dropColumn('show');
         });
     }
 }

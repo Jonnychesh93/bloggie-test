@@ -13,6 +13,7 @@ class TestimonialController extends Controller
     public function index()
     {
         $testimonials = Testimonial::query()
+            ->where('show', '=', 1)
             ->orderBy('rating', 'desc')
             ->paginate(12);
 

@@ -86,15 +86,4 @@ class TestimonialController extends Controller
             'success' => 'Successfully Edited the Testimonial.'
         ]);
     }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
 }

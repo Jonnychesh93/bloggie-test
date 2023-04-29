@@ -2,15 +2,15 @@
     <div class="bg-lighter py-5">
         <div class="container">
             <h3 class="mb-4 text-lg">
-                Latest Blogs
+                Latest Testimonials
             </h3>
 
             <div class="row">
                 <div
-                    v-for="blog in blogs"
+                    v-for="testimonial in testimonials"
                     class="col-4 mb-4"
                 >
-                    <blog-card :blog="blog" />
+                    <testimonial-card :testimonial="testimonial" />
                 </div>
             </div>
         </div>
@@ -18,13 +18,13 @@
 </template>
 
 <script>
-    import BlogCard from "./BlogCard";
+    import TestimonialCard from "./TestimonialCard";
     export default {
-        name: "LatestBlogs",
-        components: {BlogCard},
+        name: "LatestTestimonials",
+        components: {TestimonialCard},
         data() {
             return {
-                blogs: null,
+                testimonials: null,
             }
         },
         props: {
@@ -34,16 +34,16 @@
             },
         },
         mounted() {
-            this.loadBlogs();
+            this.loadTestimonials();
         },
         methods: {
-            loadBlogs() {
+            loadTestimonials() {
                 axios.get(
-                    "/api/blog/latest?limit=" + this.limit,
+                    "/api/testimonial/latest?limit=" + this.limit,
                 ).then(response => {
-                    this.blogs = response.data;
+                    this.testimonials = response.data;
                 }).catch(e => {
-                    console.error('Failed to load blog posts');
+                    console.error('Failed to load testimonials');
                 });
             }
         }

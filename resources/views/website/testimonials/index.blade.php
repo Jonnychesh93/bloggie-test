@@ -18,12 +18,17 @@
     <div class="container my-4">
         @foreach ($testimonials as $testimonial)
             <testimonial-card
+                class="mb-4 shadow-sm"
                 :testimonial="{{json_encode($testimonial->toArray())}}"
-            />
+            ></testimonial-card>
         @endforeach
 
         <div class="mt-6">
             {{ $testimonials->links() }}
         </div>
+    </div>
+
+    <div class="container my-4">
+        <latest-blogs :limit="9"></latest-blogs>
     </div>
 @endsection
